@@ -1,0 +1,23 @@
+
+<pipeline_name>/
+sub-<participant_label>/
+func|anat|dwi/
+
+
+<source_file>_space-<space>[_res-<XxYxZ>][_variant-<label>]_preproc.nii[.gz]
+<source_file>[_space-<space>][_variant-<label>]_brainmask.nii.gz
+<source_file>[_space-<space>][_variant-<label>]_[CSD].nii[.gz]
+
+
+<dataset>
+  derivatives/
+    HCP_preprocessed/
+     pipeline_description.json
+     sub-130316/
+       dwi/
+         sub-130316_data_dwi.nii.gz
+         sub-130316_brainmask.nii.gz
+         sub-130316_dwi.bval
+         sub-130316_dwi.bvec
+       anat/
+         sub-130316_acpc_dc_restore_1.25.nii.gz

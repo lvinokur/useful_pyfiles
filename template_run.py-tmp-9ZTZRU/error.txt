@@ -1,0 +1,8 @@
+average_response  /home/lea/Atlas_project/test_unzip/output1/average_wm_response.txt -force
+
+Number of subjects: 1
+Traceback (most recent call last):
+  File "/software/mrtrix3/bin/average_response", line 19, in <module>
+    with open(sys.argv[i], 'r') as f:
+IOError: [Errno 2] No such file or directory: '/home/lea/Atlas_project/test_unzip/output1/average_wm_response.txt'
+
