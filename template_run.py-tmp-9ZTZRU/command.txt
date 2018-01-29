@@ -1,1 +1,0 @@
-./template_run.py /home/lea/Atlas_project/test_unzip/derivatives/ /home/lea/Atlas_project/test_unzip/output1/ group1 -force

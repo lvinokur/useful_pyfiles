@@ -1,1 +1,0 @@
-dwiintensitynorm inorm_input mask_input /home/lea/Atlas_project/test_unzip/output1/template/inorm_output /home/lea/Atlas_project/test_unzip/output1/template/fa_template.mif /home/lea/Atlas_project/test_unzip/output1/template/fa_wm_mask.mif -force
