@@ -46,8 +46,7 @@ hcp_mrtrix_file = ('hcpproc_' + subject_label + '_dwi.mif')
 run.command('mrconvert ' +  img_file + ' -fslgrad ' + bvec_file + ' ' + bval_file + ' ' + hcp_mrtrix_file + ' -force')
 
 # mrcalc diff image
-run.command('mrcalc ' + my_mrtrix_file + hcp_mrtrix_file + ' -subtract' + ' diff_file.mif' )
-
+run.command('mrcalc ' + my_mrtrix_file + ' ' + hcp_mrtrix_file + ' -subtract' + ' ' + subject_label + 'diff_file.mif' )
 
 # extract by-shell volumes (dwiextract)
 
