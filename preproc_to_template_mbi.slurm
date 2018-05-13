@@ -1,0 +1,26 @@
+#!/bin/bash
+#SBATCH -p main
+#SBATCH --job-name="pp2t_p1_array"
+#SBATCH --account="FLO0002"
+
+# Request CPU resource for a serial job
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem-per-cpu=6000
+#SBATCH --time=1:00:00
+
+#SBATCH --mail-user=l.vinokur@brain.org.au
+#SBATCH --mail-type=ALL
+
+#SBATCH --output=MyJob-%j.out
+#SBATCH --error=MyJob-%j.err
+
+declare -a subject_list=('201111' '208226' '211417' '211720' '212318' '214423' '221319' '239944' '245333' '280739' '298051' '366446' '397760' '414229' '499566'
+'654754' '672756' '751348' '756055' '792564' '856766' '857263' '899885')
+
+module load singularity
+
+echo $SLURM_ARRAY_TASK_ID
+subj_id=${subject_list[$SLURM_ARRAY_TASK_ID]}
+
+singularity run preproc_to_template.img ~/testing3 ~/out participant1 hcp --participant_label=$subj_id
