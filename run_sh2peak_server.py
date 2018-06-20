@@ -11,4 +11,4 @@ for subject in subjects :
     subject_path = os.path.join(subjectspath, subject)
     fod_file = os.path.join(subject_path, 'fod.mif')
     peaks_file = os.path.join(subject_path, 'peaks.nii.gz')
-    os.system('sh2peaks  ' + fod_file + ' ' peaks_file +  ' -force')
+    os.system('sh2peaks  ' + fod_file + ' ' + peaks_file +  ' -force')
