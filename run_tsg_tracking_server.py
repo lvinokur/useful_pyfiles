@@ -1,6 +1,6 @@
 
 import os, glob
-#from mrtrix3 import app, fsl, file, image, path, run
+from mrtrix3 import app, fsl, file, image, path, run
 
 print ('initializing')
 
@@ -36,9 +36,9 @@ for subject in subjects :
         tckgen_name = os.path.join('tsg_bundles', (bundle + '_50k.tck'))
         tck_warped = os.path.join('tsg_bundles',(bundle + '50k_warped.tck'))
         fixel_file = (bundle + '_' + subject + '.mif')
-        fixel_folder = os.path.join(template_path,'test_fixel_bundles','ends_dx_20k')
+        fixel_folder = os.path.join(template_path,'fixel_bundles_20k_ends_dl')
         os.system('maskfilter -npass 1 ' + maskname + ' dilate ' + dilated_mask + ' -force')
         include = (' -seed_image '  + maskname + ' -include ' + begining + ' -include ' + ending + ' -mask ' + dilated_mask )
-        os.system('tckgen -select 50000 ' + include + ' fod.mif ' + tckgen_name + ' -force')
+        os.system('tckgen -select 20000 ' + include + ' fod.mif ' + tckgen_name + ' -force')
         os.system('tcktransform ' + tckgen_name + ' ' + tck_warp + ' ' + tck_warped + ' -force')
         os.system('tck2fixel ' + tck_warped + ' ' + fixel_mask + ' ' + fixel_folder + ' ' + fixel_file + ' -force')
