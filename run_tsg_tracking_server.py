@@ -1,6 +1,6 @@
 
 import os, glob
-from mrtrix3 import app, fsl, file, image, path, run
+#from mrtrix3 import app, fsl, file, image, path, run
 
 print ('initializing')
 
@@ -12,7 +12,9 @@ template_path = '/home/lea/Atlas_project/preproc_to_template/out/template'
 fixel_mask = os.path.join(template_path,'fixelmask_06')
 
 subjects = [ os.path.split(x)[-1] for x in glob.glob(os.path.join(subjectspath, '*'))]
-subjects = ['127933','188347', '899885', '751348', '146432','116524', '100408', '129028']
+subjects = ['127933', '188347', '899885', '751348', '116524', '100408', '129028', '208226', '101107', '101309', '131722',
+            '212318', '111716', '199655', '118528', '672756', '654754', '178950', '792564', '192540', '151223', '198451',
+            '151526', '110411', '190031', '105014', '138534', '397760', '221319', '139637', '239944', '146432', '162733', '366446']
 
 
 bundle_names = [os.path.split(x)[-1] for x in glob.glob(os.path.join(subjectspath,subjects[0], 'tractseg_output', 'bundle_segmentations', '*.nii.gz'))]
